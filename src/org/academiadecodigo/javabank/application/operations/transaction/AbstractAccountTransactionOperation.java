@@ -20,11 +20,11 @@ public abstract class AbstractAccountTransactionOperation extends AbstractBankOp
     /**
      * Initializes a new {@code AbstractAccountTransactionOperation} given a bank application
      *
-     * @see AbstractBankOperation#AbstractBankOperation(BankApplication)
+     * @see
      */
     public AbstractAccountTransactionOperation(Controller controller) {
         super(controller);
-        //prompt = controller.getPrompt();
+        prompt = controller.getPrompt();
         accountManager = controller.getBank().getAccountManager();
     }
 

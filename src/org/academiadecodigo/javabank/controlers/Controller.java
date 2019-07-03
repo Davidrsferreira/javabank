@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.controlers;
 
+import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.javabank.domain.Bank;
 import org.academiadecodigo.javabank.views.View;
 
@@ -10,9 +11,11 @@ public abstract class Controller {
     Bank bank;
     View view;
     private int accessingCustomerId;
+    private Prompt prompt;
 
-    public Controller(Bank bank){
+    public Controller(Bank bank, Prompt prompt){
         this.bank = bank;
+        this.prompt = prompt;
     }
 
     public void init(){
@@ -38,4 +41,9 @@ public abstract class Controller {
     public void setAccessingCustomerId(int accessingCustomerId) {
         this.accessingCustomerId = accessingCustomerId;
     }
+
+    public Prompt getPrompt() {
+        return prompt;
+    }
+
 }

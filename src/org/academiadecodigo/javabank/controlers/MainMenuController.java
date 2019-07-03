@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.controlers;
 
+import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.javabank.application.UserOptions;
 import org.academiadecodigo.javabank.application.operations.BalanceOperation;
 import org.academiadecodigo.javabank.application.operations.NewAccountOperation;
@@ -15,8 +16,8 @@ public class MainMenuController extends Controller {
 
     private Map<Integer, Operation> operationsMap;
 
-    public MainMenuController(Bank bank, int id) {
-        super(bank);
+    public MainMenuController(Bank bank, int id, Prompt prompt) {
+        super(bank, prompt);
         setAccessingCustomerId(id);
         operationsMap = buildOperationsMap();
         initializeViews();

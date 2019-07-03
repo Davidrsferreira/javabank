@@ -43,13 +43,12 @@ public class App {
 
     private static int mainMenu(Bank bank, Prompt prompt, int customer) {
 
-        Controller mainMenuController = new MainMenuController(bank, customer);
+        Controller mainMenuController = new MainMenuController(bank, customer, prompt);
         View mainMenuView = new MainMenuView();
 
         mainMenuController.setView(mainMenuView);
         mainMenuController.setAccessingCustomerId(customer);
         mainMenuView.setController(mainMenuController);
-        mainMenuView.setPrompt(prompt);
 
         mainMenuController.init();
 
@@ -59,12 +58,11 @@ public class App {
 
     private static int login(Bank bank, Prompt prompt){
 
-        Controller loginController = new LoginController(bank);
+        Controller loginController = new LoginController(bank, prompt);
         View loginView = new LoginView();
 
         loginController.setView(loginView);
         loginView.setController(loginController);
-        loginView.setPrompt(prompt);
 
         loginController.init();
 

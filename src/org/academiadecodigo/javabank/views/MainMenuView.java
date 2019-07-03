@@ -13,6 +13,6 @@ public class MainMenuView extends View{
         mainMenu.setError(Messages.ERROR_INVALID_OPTION);
         mainMenu.setMessage(Messages.MENU_WELCOME);
 
-        userChoice = prompt.getUserInput(mainMenu);
+        userChoice = getController().getPrompt().getUserInput(mainMenu);
     }
 }
