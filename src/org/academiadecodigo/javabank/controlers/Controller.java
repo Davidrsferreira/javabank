@@ -9,6 +9,7 @@ public abstract class Controller {
 
     Bank bank;
     View view;
+    private int accessingCustomerId;
 
     public Controller(Bank bank){
         this.bank = bank;
@@ -24,5 +25,17 @@ public abstract class Controller {
 
     public void setView(View view) {
         this.view = view;
+    }
+
+    public int getAccessingCustomerId() {
+        return accessingCustomerId;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setAccessingCustomerId(int accessingCustomerId) {
+        this.accessingCustomerId = accessingCustomerId;
     }
 }

@@ -6,8 +6,8 @@ import org.academiadecodigo.javabank.controlers.Controller;
 public abstract class View {
 
     private Controller controller;
-    private Prompt prompt;
-    int option;
+    Prompt prompt;
+    int userChoice;
 
     public abstract void show();
 
@@ -15,19 +15,15 @@ public abstract class View {
         this.controller = controller;
     }
 
-    public void setPrompt(Prompt prompt) {
-        this.prompt = prompt;
-    }
-
     public Controller getController() {
         return controller;
     }
 
-    public Prompt getPrompt() {
-        return prompt;
+    public int getUserChoice() {
+        return userChoice;
     }
 
-    public int getOption() {
-        return option;
+    public void setPrompt(Prompt prompt){
+        this.prompt = prompt;
     }
 }

@@ -12,7 +12,8 @@ public class LoginView extends View{
         scanner.setMessage(Messages.CHOOSE_CUSTOMER);
         scanner.setError(Messages.ERROR_INVALID_CUSTOMER);
 
-        option = super.getPrompt().getUserInput(scanner);
+        userChoice = prompt.getUserInput(scanner);
+        getController().setAccessingCustomerId(userChoice);
 
     }
 

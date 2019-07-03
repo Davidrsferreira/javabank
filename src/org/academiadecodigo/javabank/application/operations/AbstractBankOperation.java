@@ -1,6 +1,7 @@
 package org.academiadecodigo.javabank.application.operations;
 
 import org.academiadecodigo.javabank.application.BankApplication;
+import org.academiadecodigo.javabank.controlers.Controller;
 import org.academiadecodigo.javabank.domain.Customer;
 
 /**
@@ -9,16 +10,16 @@ import org.academiadecodigo.javabank.domain.Customer;
  */
 public abstract class AbstractBankOperation implements Operation {
 
-    protected BankApplication bankApplication;
+    protected Controller controller;
     protected Customer customer;
 
     /**
      * Initializes a new {@code AbstractBankOperation} given a bank application
      *
-     * @param bankApplication the bank application
+     * @param controller the bank application
      */
-    public AbstractBankOperation(BankApplication bankApplication) {
-        this.bankApplication = bankApplication;
-        customer = bankApplication.getBank().getCustomer(bankApplication.getAccessingCustomerId());
+    public AbstractBankOperation(Controller controller) {
+        this.controller = controller;
+        customer = controller.getBank().getCustomer(controller.getAccessingCustomerId());
     }
 }

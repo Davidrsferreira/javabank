@@ -3,6 +3,7 @@ package org.academiadecodigo.javabank.application.operations;
 import org.academiadecodigo.javabank.application.BankApplication;
 import org.academiadecodigo.javabank.application.Messages;
 import org.academiadecodigo.javabank.application.UserOptions;
+import org.academiadecodigo.javabank.controlers.Controller;
 import org.academiadecodigo.javabank.domain.account.Account;
 
 import java.text.DecimalFormat;
@@ -22,8 +23,8 @@ public class BalanceOperation extends AbstractBankOperation {
      *
      * @see AbstractBankOperation#AbstractBankOperation(BankApplication)
      */
-    public BalanceOperation(BankApplication bankApplication) {
-        super(bankApplication);
+    public BalanceOperation(Controller controller) {
+        super(controller);
     }
 
     /**

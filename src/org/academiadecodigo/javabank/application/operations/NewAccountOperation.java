@@ -3,6 +3,7 @@ package org.academiadecodigo.javabank.application.operations;
 import org.academiadecodigo.javabank.application.BankApplication;
 import org.academiadecodigo.javabank.application.Messages;
 import org.academiadecodigo.javabank.application.UserOptions;
+import org.academiadecodigo.javabank.controlers.Controller;
 import org.academiadecodigo.javabank.domain.account.AccountType;
 
 /**
@@ -17,8 +18,8 @@ public class NewAccountOperation extends AbstractBankOperation {
      *
      * @see AbstractBankOperation#AbstractBankOperation(BankApplication)
      */
-    public NewAccountOperation(BankApplication bankApplication) {
-        super(bankApplication);
+    public NewAccountOperation(Controller controller) {
+        super(controller);
     }
 
     /**
