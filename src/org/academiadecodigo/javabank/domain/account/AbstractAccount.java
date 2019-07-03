@@ -2,51 +2,46 @@ package org.academiadecodigo.javabank.domain.account;
 
 /**
  * A generic account domain entity to be used as a base for concrete types of accounts
+ * @see Account
  */
-public abstract class Account {
+public abstract class AbstractAccount implements Account {
 
     private int id;
     private double balance = 0;
 
     /**
-     * Initializes a new {@code Account} instance with an id
+     * Initializes a new {@code Account} instance with a given id
      *
      * @param id the account id
      */
-    public Account(int id) {
+    public AbstractAccount(int id) {
         this.id = id;
     }
 
     /**
-     * Gets the account id
-     *
-     * @return the account id
+     * @see Account#getId()
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Gets the account balance
-     *
-     * @return the account balance
+     * @see Account#getBalance()
      */
     public double getBalance() {
         return balance;
     }
 
     /**
-     * Gets the account type
-     *
-     * @return the account type
+     * @see Account#getAccountType()
      */
     public abstract AccountType getAccountType();
 
     /**
-     * Credits the account if possible
+     * Credits account if possible
      *
      * @param amount the amount to credit
-     * @see Account#canCredit(double)
+     * @see Account#credit(double)
      */
     public void credit(double amount) {
         if (canCredit(amount)) {
@@ -67,31 +62,23 @@ public abstract class Account {
     }
 
     /**
-     * Checks if a specific amount can be credited on the account
-     *
-     * @param amount the amount to check
-     * @return {@code true} if the account can be credited
+     * @see Account#canCredit(double)
      */
     public boolean canCredit(double amount) {
         return amount > 0;
     }
 
     /**
-     * Checks if a specific amount can be debited from the account
-     *
-     * @param amount the amount to check
-     * @return {@code true} if the account can be debited
+     * @see Account#canDebit(double)
      */
     public boolean canDebit(double amount) {
         return amount > 0 && amount <= balance;
     }
 
     /**
-     * Checks if the account can be withdrawn
-     *
-     * @return {@code true} if withdraw can be done
+     * @see Account#canWithdraw()
      */
-    public boolean canWithdraw() {
+    public boolean canWithdraw(){
         return true;
     }
 }
