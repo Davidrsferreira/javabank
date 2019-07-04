@@ -31,4 +31,8 @@ public class AuthHandler implements AuthService{
     public void setLoginCustomer(int id) {
         customerHandler.setLoginCustomer(id);
     }
+
+    public CustomerHandler getCustomerHandler(){
+        return customerHandler;
+    }
 }

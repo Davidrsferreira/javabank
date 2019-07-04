@@ -54,18 +54,19 @@ public class Bootstrap {
         // wire login controller and view
         LoginController loginController = new LoginController();
         LoginView loginView = new LoginView();
-        loginController.setView(loginView);
-        loginController.setService(authHandler);
 
         loginView.setLoginController(loginController);
         loginView.setPrompt(prompt);
+        loginController.setView(loginView);
+        loginController.setService(authHandler);
 
         // wire main controller and view
         MainController mainController = new MainController();
         MainView mainView = new MainView();
-        //mainView.setBank(bank);
-        mainView.setPrompt(prompt);
+
         mainView.setMainController(mainController);
+        mainView.setPrompt(prompt);
+        mainView.setCustomerHandler(authHandler.getCustomerHandler());
         mainController.setView(mainView);
         loginController.setNextController(mainController);
 
