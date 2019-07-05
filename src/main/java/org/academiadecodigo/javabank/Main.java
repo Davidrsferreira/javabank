@@ -31,16 +31,16 @@ public class Main {
         // wire login controller and view
         LoginController loginController = new LoginController();
         LoginView loginView = new LoginView();
-        loginController.setView(loginView);
-        //loginController.setBank(bank);
+
         loginView.setLoginController(loginController);
         loginView.setLoginController(loginController);
         loginView.setPrompt(prompt);
+        loginController.setView(loginView);
 
         // wire main controller and view
         MainController mainController = new MainController();
         MainView mainView = new MainView();
-        //mainView.setBank(bank);
+
         mainView.setPrompt(prompt);
         mainView.setMainController(mainController);
         mainController.setView(mainView);
@@ -55,7 +55,8 @@ public class Main {
         // wire new account controller and view
         NewAccountView newAccountView = new NewAccountView();
         NewAccountController newAccountController = new NewAccountController();
-        newAccountController.setBank(bank);
+
+        //newAccountController.setAccountHandler(a);
         newAccountController.setView(newAccountView);
         newAccountView.setNewAccountController(newAccountController);
 

@@ -79,7 +79,6 @@ public class Bootstrap {
         // wire new account controller and view
         NewAccountView newAccountView = new NewAccountView();
         NewAccountController newAccountController = new NewAccountController();
-        //newAccountController.setBank(bank);
         newAccountController.setView(newAccountView);
         newAccountView.setNewAccountController(newAccountController);
 

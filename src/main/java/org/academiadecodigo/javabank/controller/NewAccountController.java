@@ -1,9 +1,11 @@
 package org.academiadecodigo.javabank.controller;
 
+import org.academiadecodigo.javabank.factories.AccountFactory;
 import org.academiadecodigo.javabank.managers.AccountManager;
 import org.academiadecodigo.javabank.model.Bank;
 import org.academiadecodigo.javabank.model.account.Account;
 import org.academiadecodigo.javabank.model.account.AccountType;
+import org.academiadecodigo.javabank.services.AccountHandler;
 import org.academiadecodigo.javabank.view.NewAccountView;
 
 /**
@@ -11,16 +13,20 @@ import org.academiadecodigo.javabank.view.NewAccountView;
  */
 public class NewAccountController extends AbstractController {
 
-    private Bank bank;
+    private AccountHandler accountHandler;
     private Integer newAccountId;
 
+    public NewAccountController(){
+        accountHandler = new AccountHandler();
+    }
+
     /**
-     * Sets the bank
+     * Sets the accountHandler
      *
-     * @param bank the bank to set
+     * @param accountHandler the bank to set
      */
-    public void setBank(Bank bank) {
-        this.bank = bank;
+    public void setAccountHandler(AccountHandler accountHandler) {
+        this.accountHandler = accountHandler;
     }
 
     /**
@@ -46,10 +52,6 @@ public class NewAccountController extends AbstractController {
     }
 
     private int createAccount() {
-
-        Account newAccount = bank.getAccountManager().openAccount(AccountType.CHECKING);
-        bank.getLoginCustomer().addAccount(newAccount);
-
-        return newAccount.getId();
+        return accountHandler.createAccount(AccountType.CHECKING);
     }
 }

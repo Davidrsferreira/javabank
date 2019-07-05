@@ -2,17 +2,19 @@ package org.academiadecodigo.javabank.services;
 
 import org.academiadecodigo.javabank.factories.AccountFactory;
 import org.academiadecodigo.javabank.model.account.Account;
+import org.academiadecodigo.javabank.model.account.AccountType;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class AccountHandler implements AccountService{
 
-    private AccountFactory accountFactory = new AccountFactory();
     private Map<Integer, Account> accountMap;
+    private AccountFactory accountFactory;
 
     public AccountHandler(){
         accountMap = new HashMap<>();
+        accountFactory = new AccountFactory();
     }
 
     @Override
@@ -50,5 +52,13 @@ public class AccountHandler implements AccountService{
             dstAccount.credit(amount);
         }
 
+    }
+
+    public int createAccount(AccountType accountType) {
+
+        Account newAccount = accountFactory.createAccount(accountType);
+        accountMap.put(newAccount.getId(), newAccount);
+        add(newAccount);
+        return newAccount.getId();
     }
 }
