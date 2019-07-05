@@ -15,15 +15,15 @@ import java.util.Set;
 public class BalanceView implements View {
 
     private DecimalFormat df = new DecimalFormat("#.##");
-    private Bank bank;
+    private BalanceController balanceController;
 
     /**
      * Sets the bank
      *
      * @param bank the bank to set
      */
-    public void setBank(Bank bank) {
-        this.bank = bank;
+    public void setBalanceController(BalanceController balanceController) {
+        this.balanceController = balanceController;
     }
 
     /**
@@ -36,7 +36,7 @@ public class BalanceView implements View {
 
     private void showBalance() {
 
-        Customer customer = bank.getLoginCustomer();
+        Customer customer = balanceController.getLoginCustomer();
         System.out.println("\n" + customer.getName() + Messages.VIEW_BALANCE_MESSAGE + "\n");
 
         Set<Account> accounts = customer.getAccounts();

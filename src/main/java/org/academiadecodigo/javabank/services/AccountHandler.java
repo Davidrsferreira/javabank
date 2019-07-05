@@ -1,6 +1,7 @@
 package org.academiadecodigo.javabank.services;
 
 import org.academiadecodigo.javabank.factories.AccountFactory;
+import org.academiadecodigo.javabank.model.Customer;
 import org.academiadecodigo.javabank.model.account.Account;
 import org.academiadecodigo.javabank.model.account.AccountType;
 
@@ -60,5 +61,9 @@ public class AccountHandler implements AccountService{
         accountMap.put(newAccount.getId(), newAccount);
         add(newAccount);
         return newAccount.getId();
+    }
+
+    public Customer getLoginCustomer() {
+        return getLoginCustomer();
     }
 }
