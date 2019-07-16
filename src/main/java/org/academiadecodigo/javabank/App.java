@@ -1,15 +1,12 @@
 package org.academiadecodigo.javabank;
 
 import org.academiadecodigo.javabank.controller.Controller;
-import org.academiadecodigo.javabank.persistence.H2WebServer;
 import org.academiadecodigo.javabank.persistence.JpaBootstrap;
 import org.academiadecodigo.javabank.services.AuthServiceImpl;
-import org.academiadecodigo.javabank.services.jpa.JpaAccountService;
-import org.academiadecodigo.javabank.services.jpa.JpaCustomerService;
+import org.academiadecodigo.javabank.services.JpaAccountService;
+import org.academiadecodigo.javabank.services.JpaCustomerService;
 
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.sql.SQLException;
 
 public class App {
 

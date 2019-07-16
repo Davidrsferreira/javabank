@@ -1,6 +1,7 @@
-package org.academiadecodigo.javabank.services.jpa;
+package org.academiadecodigo.javabank.services;
 
 import org.academiadecodigo.javabank.model.AbstractModel;
+import org.academiadecodigo.javabank.persistence.jpa.JpaTransactionManager;
 import org.academiadecodigo.javabank.services.CRUDService;
 
 import javax.persistence.EntityManager;
