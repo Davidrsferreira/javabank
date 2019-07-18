@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * Common interface for customer services, provides methods to manage customers
  */
-public interface CustomerService extends CRUDService<Customer> {
+public interface CustomerService{
 
     /**
      * Gets the balance of the customer
@@ -24,4 +24,6 @@ public interface CustomerService extends CRUDService<Customer> {
      * @return the accounts of the given customer id
      */
     Set<Integer> listCustomerAccountIds(Integer id);
+
+    Customer findById(Integer id);
 }

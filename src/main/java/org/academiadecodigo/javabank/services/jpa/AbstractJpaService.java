@@ -2,6 +2,7 @@ package org.academiadecodigo.javabank.services.jpa;
 
 import org.academiadecodigo.javabank.model.AbstractModel;
 import org.academiadecodigo.javabank.services.CRUDService;
+import org.academiadecodigo.javabank.persistence.TransactionManager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,6 +20,7 @@ public abstract class AbstractJpaService<T extends AbstractModel> implements CRU
 
     protected EntityManagerFactory emf;
     private Class<T> modelType;
+    private TransactionManager tm;
 
     /**
      * Initializes a new {@code JPA Service} instance given an entity manager factory and a model type
@@ -26,9 +28,10 @@ public abstract class AbstractJpaService<T extends AbstractModel> implements CRU
      * @param emf the entity manager factory
      * @param modelType the model type
      */
-    public AbstractJpaService(EntityManagerFactory emf, Class<T> modelType) {
+    public AbstractJpaService(EntityManagerFactory emf, Class<T> modelType, TransactionManager tm) {
         this.emf = emf;
         this.modelType = modelType;
+        this.tm = tm;
     }
 
     /**
