@@ -5,7 +5,7 @@ import org.academiadecodigo.javabank.persistence.TransactionException;
 import org.academiadecodigo.javabank.persistence.dao.CustomerDao;
 import org.hibernate.HibernateException;
 
-import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -23,10 +23,10 @@ public class JpaCustomerDao extends GenericJpaDao<Customer> implements CustomerD
     /**
      * @see CustomerDao#getCustomerIds()
      */
+    @Transactional
     public List<Integer> getCustomerIds() {
         try {
 
-            EntityManager em = sm.getCurrentSession();
             return em.createQuery("select id from Customer", Integer.class)
                     .getResultList();
 

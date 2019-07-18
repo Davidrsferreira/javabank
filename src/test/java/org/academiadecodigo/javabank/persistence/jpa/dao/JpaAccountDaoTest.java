@@ -5,7 +5,6 @@ import org.academiadecodigo.javabank.persistence.model.account.CheckingAccount;
 import org.academiadecodigo.javabank.persistence.model.account.SavingsAccount;
 import org.academiadecodigo.javabank.persistence.TransactionException;
 import org.academiadecodigo.javabank.persistence.dao.jpa.JpaAccountDao;
-import org.academiadecodigo.javabank.persistence.jpa.JpaSessionManager;
 import org.hibernate.HibernateException;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,6 +21,7 @@ import static org.mockito.Mockito.*;
 
 public class JpaAccountDaoTest {
 
+    /*
     private JpaSessionManager sm;
     private JpaAccountDao customerDao;
     private EntityManager em;
@@ -265,4 +265,5 @@ public class JpaAccountDaoTest {
 
 
     }
+    */
 }

@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 
 public class JpaIntegrationTestHelper {
 
+    /*
     protected EntityManagerFactory emf;
     protected JpaSessionManager sm;
     protected JpaTransactionManager tx;
@@ -48,4 +49,5 @@ public class JpaIntegrationTestHelper {
 
         ctx.destroy();
     }
+    */
 }

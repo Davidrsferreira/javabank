@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 
 public class JpaAccountDaoIntegrationTest extends JpaIntegrationTestHelper {
 
+    /*
     private final static Integer INVALID_ID = 9999;
     private final static double DOUBLE_DELTA = 0.1;
 
@@ -168,5 +169,5 @@ public class JpaAccountDaoIntegrationTest extends JpaIntegrationTestHelper {
         accountDao.delete(INVALID_ID);
         tx.commit();
     }
-
+    */
 }
