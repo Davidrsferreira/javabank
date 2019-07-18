@@ -33,8 +33,11 @@ public class JpaTransactionManager implements TransactionManager {
         }
         sm.stopSession();
     }
+<<<<<<< HEAD
 
     public void setSm(JpaSessionManager sm) {
         this.sm = sm;
     }
+=======
+>>>>>>> 4d5eea15798a106a317f0b6b3c21f9136b49823f
 }

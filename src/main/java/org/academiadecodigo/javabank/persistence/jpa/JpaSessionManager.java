@@ -10,6 +10,13 @@ public class JpaSessionManager implements SessionManager {
     private EntityManagerFactory emf; // the persistence unit
     private EntityManager em; // the persistence context
 
+<<<<<<< HEAD
+=======
+    public JpaSessionManager(EntityManagerFactory emf){
+        this.emf = emf;
+    }
+
+>>>>>>> 4d5eea15798a106a317f0b6b3c21f9136b49823f
     @Override
     public void startSession() {
 

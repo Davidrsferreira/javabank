@@ -1,6 +1,7 @@
-package org.academiadecodigo.javabank.services.jpa;
+package org.academiadecodigo.javabank.services;
 
 import org.academiadecodigo.javabank.model.account.Account;
+import org.academiadecodigo.javabank.services.AbstractJpaService;
 import org.academiadecodigo.javabank.services.AccountService;
 import org.academiadecodigo.javabank.persistence.TransactionManager;
 

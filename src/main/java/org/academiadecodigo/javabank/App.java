@@ -11,7 +11,14 @@ import org.academiadecodigo.javabank.persistence.jpa.JpaSessionManager;
 import org.academiadecodigo.javabank.persistence.jpa.JpaTransactionManager;
 import org.academiadecodigo.javabank.services.AccountServiceImpl;
 import org.academiadecodigo.javabank.services.AuthServiceImpl;
+<<<<<<< HEAD
 import org.academiadecodigo.javabank.services.CustomerServiceImpl;
+=======
+import org.academiadecodigo.javabank.services.JpaAccountService;
+import org.academiadecodigo.javabank.services.JpaCustomerService;
+
+import javax.persistence.EntityManagerFactory;
+>>>>>>> 4d5eea15798a106a317f0b6b3c21f9136b49823f
 
 public class App {
 

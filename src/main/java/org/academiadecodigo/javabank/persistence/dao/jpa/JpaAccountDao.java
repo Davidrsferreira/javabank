@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.persistence.dao.jpa;
 
+<<<<<<< HEAD
 import org.academiadecodigo.javabank.model.account.Account;
 import org.academiadecodigo.javabank.persistence.dao.AccountDao;
 
@@ -82,4 +83,7 @@ public class JpaAccountDao extends GenericJpaDao<Account> implements AccountDao 
         }
     }
 
+=======
+public class JpaAccountDao {
+>>>>>>> 4d5eea15798a106a317f0b6b3c21f9136b49823f
 }
