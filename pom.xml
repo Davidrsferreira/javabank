@@ -100,6 +100,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.11.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -154,7 +160,7 @@
                     <url>http://localhost:8080/manager/text</url>
                     <!-- server defined in ~/.m2/settings.xml -->
                     <server>tomcat</server>
-                    <path>/hello</path>
+                    <path>/javabank</path>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,27 +1,24 @@
 package org.academiadecodigo.javabank.servlets;
 
 import org.academiadecodigo.javabank.persistence.model.Customer;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+@Controller
+public class CustomerDetails{
 
-public class CustomerDetails extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        RequestDispatcher request = getServletContext().getRequestDispatcher("/WEB-INF/customerDetails.jsp");
+    @RequestMapping(method = RequestMethod.GET, value = "/customerdetails")
+    public String sayHello(Model model) {
 
         Customer customer = new Customer();
         customer.setFirstName("David");
         customer.setEmail("davidrsferreira@gmail.com");
 
-        req.setAttribute("customer", customer);
-        request.forward(req, resp);
+       model.addAttribute("customer", customer);
+
+       return "customerDetails";
 
     }
 }
