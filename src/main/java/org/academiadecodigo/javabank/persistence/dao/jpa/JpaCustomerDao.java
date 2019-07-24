@@ -2,12 +2,14 @@ package org.academiadecodigo.javabank.persistence.dao.jpa;
 
 import org.academiadecodigo.javabank.persistence.model.Customer;
 import org.academiadecodigo.javabank.persistence.dao.CustomerDao;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * A JPA {@link CustomerDao} implementation
  */
+@Repository
 public class JpaCustomerDao extends GenericJpaDao<Customer> implements CustomerDao {
 
     /**
@@ -23,5 +25,10 @@ public class JpaCustomerDao extends GenericJpaDao<Customer> implements CustomerD
     public List<Integer> getCustomerIds() {
         return em.createQuery("select id from Customer", Integer.class)
                 .getResultList();
+    }
+
+    @Override
+    public List<Customer> findAll() {
+        return em.createQuery("from Customer", Customer.class).getResultList();
     }
 }
