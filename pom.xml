@@ -4,7 +4,7 @@
     <artifactId>javabank-step8-spring.tx</artifactId>
     <version>0.0.1</version>
 
-    <name>Javabank Web Hello World</name>
+    <name>Javabank</name>
     <packaging>war</packaging>
 
     <properties>
@@ -12,7 +12,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -79,12 +78,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.12</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
         </dependency>
 
         <dependency>
