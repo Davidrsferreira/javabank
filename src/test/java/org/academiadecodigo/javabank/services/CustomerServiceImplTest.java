@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.services;
 
+import org.academiadecodigo.javabank.exception.JavaBankException;
 import org.academiadecodigo.javabank.persistence.dao.AccountDao;
 import org.academiadecodigo.javabank.persistence.dao.CustomerDao;
 import org.academiadecodigo.javabank.persistence.dao.RecipientDao;
@@ -132,7 +133,7 @@ public class CustomerServiceImplTest {
     }
 
     @Test
-    public void testDelete() {
+    public void testDelete() throws JavaBankException {
 
         //setup
 

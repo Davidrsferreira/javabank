@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.services;
 
+import org.academiadecodigo.javabank.exception.JavaBankException;
 import org.academiadecodigo.javabank.persistence.model.Customer;
 import org.academiadecodigo.javabank.persistence.model.Recipient;
 import org.academiadecodigo.javabank.persistence.model.account.Account;
@@ -99,7 +100,12 @@ public class CustomerServiceImpl implements CustomerService {
      */
     @Transactional
     @Override
-    public void delete(Integer id) {
+    public void delete(Integer id) throws JavaBankException{
+
+        if (customerDao.findById(id) == null){
+            throw new JavaBankException("Customer does not exist");
+        }
+
         customerDao.delete(id);
     }
 

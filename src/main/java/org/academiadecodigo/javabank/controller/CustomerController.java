@@ -5,6 +5,7 @@ import org.academiadecodigo.javabank.converters.AccountToAccountDto;
 import org.academiadecodigo.javabank.converters.CustomerDtoToCustomer;
 import org.academiadecodigo.javabank.converters.CustomerToCustomerDto;
 import org.academiadecodigo.javabank.converters.RecipientToRecipientDto;
+import org.academiadecodigo.javabank.exception.JavaBankException;
 import org.academiadecodigo.javabank.persistence.model.Customer;
 import org.academiadecodigo.javabank.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -177,7 +178,7 @@ public class CustomerController {
      * @return the view to render
      */
     @RequestMapping(method = RequestMethod.GET, path = "/{id}/delete")
-    public String deleteCustomer(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+    public String deleteCustomer(@PathVariable Integer id, RedirectAttributes redirectAttributes) throws JavaBankException {
         Customer customer = customerService.get(id);
         customerService.delete(id);
         redirectAttributes.addFlashAttribute("lastAction", "Deleted " + customer.getFirstName() + " " + customer.getLastName());

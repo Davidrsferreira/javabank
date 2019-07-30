@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.services;
 
+import org.academiadecodigo.javabank.exception.JavaBankException;
 import org.academiadecodigo.javabank.persistence.model.Customer;
 import org.academiadecodigo.javabank.persistence.model.Recipient;
 
@@ -39,7 +40,7 @@ public interface CustomerService {
      *
      * @param id the customer id
      */
-    void delete(Integer id);
+    void delete(Integer id) throws JavaBankException;
 
     /**
      * Gets a list of the customers
