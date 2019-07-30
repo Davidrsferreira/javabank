@@ -115,6 +115,13 @@
             <version>2.3.0</version>
         </dependency>
 
+        <!-- JSR-301/3 validation -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.2.Final</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -139,7 +146,7 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <server>tomcat</server>
-                    <path>/javabank3</path>
+                    <path>/javabank</path>
                 </configuration>
             </plugin>
 
