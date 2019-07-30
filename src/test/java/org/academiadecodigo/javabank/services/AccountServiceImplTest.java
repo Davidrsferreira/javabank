@@ -1,10 +1,11 @@
 package org.academiadecodigo.javabank.services;
 
-import org.academiadecodigo.javabank.persistence.model.account.Account;
 import org.academiadecodigo.javabank.persistence.dao.AccountDao;
+import org.academiadecodigo.javabank.persistence.model.account.Account;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class AccountServiceImplTest {
@@ -21,6 +22,24 @@ public class AccountServiceImplTest {
         accountService.setAccountDao(accountDao);
 
     }
+
+    @Test
+    public void testGet() {
+
+        //setup
+        int fakeId = 9999;
+        Account fakeAccount = mock(Account.class);
+        when(accountDao.findById(fakeId)).thenReturn(fakeAccount);
+        when(fakeAccount.getId()).thenReturn(fakeId);
+
+        //exercise
+        Account returnAcc = accountService.get(fakeId);
+
+        //verify
+        verify(accountDao, times(1)).findById(fakeId);
+        assertTrue(returnAcc.getId() == fakeId);
+    }
+
 
     @Test
     public void testDeposit() {

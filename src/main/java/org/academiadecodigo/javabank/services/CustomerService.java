@@ -4,7 +4,6 @@ import org.academiadecodigo.javabank.persistence.model.Customer;
 import org.academiadecodigo.javabank.persistence.model.Recipient;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Common interface for customer services, provides methods to manage customers
@@ -28,19 +27,26 @@ public interface CustomerService {
     double getBalance(Integer id);
 
     /**
+     * Saves a customer
+     *
+     * @param customer the customer to save
+     * @return the saved customer
+     */
+    Customer save(Customer customer);
+
+    /**
+     * Deletes a customer
+     *
+     * @param id the customer id
+     */
+    void delete(Integer id);
+
+    /**
      * Gets a list of the customers
      *
      * @return the customers list
      */
     List<Customer> list();
-
-    /**
-     * Gets the set of customer account ids
-     *
-     * @param id the customer id
-     * @return the accounts of the given customer id
-     */
-    Set<Integer> listCustomerAccountIds(Integer id);
 
     /**
      * Gets the list of customer recipients
@@ -49,4 +55,20 @@ public interface CustomerService {
      * @return the list of recipients of the customer
      */
     List<Recipient> listRecipients(Integer id);
+
+    /**
+     * Adds a recipient to the customer
+     *
+     * @param id        the customer id
+     * @param recipient the recipient to add
+     */
+    void addRecipient(Integer id, Recipient recipient);
+
+    /**
+     * Removes a recipient from the customer
+     *
+     * @param id          the customer id
+     * @param recipientId the recipient id
+     */
+    void removeRecipient(Integer id, Integer recipientId);
 }
