@@ -4,6 +4,7 @@ import org.academiadecodigo.javabank.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,6 +25,13 @@ public class CustomerController {
         model.addAttribute("customers", customerService.listAll());
 
         return "customerList";
+
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/customer/{id}")
+    public String getCustomer(@PathVariable Integer id) {
+
+        return "customerDetails";
 
     }
 }
