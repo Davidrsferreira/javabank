@@ -1,6 +1,8 @@
 package org.academiadecodigo.javabank.converters;
 
-import org.springframework.core.convert.converter.Converter;
+import org.academiadecodigo.javabank.exceptions.CustomerNotFoundException;
+import org.academiadecodigo.javabank.exceptions.JavaBankException;
+import org.academiadecodigo.javabank.exceptions.RecipientNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ public abstract class AbstractConverter<S, T> implements Converter<S, T> {
      * @param listToConvert the list to convert
      * @return the list of converted elements
      */
-    public List<T> convert(List<S> listToConvert) {
+    public List<T> convert(List<S> listToConvert) throws JavaBankException {
 
         List<T> conversions = new ArrayList<>(listToConvert.size());
 

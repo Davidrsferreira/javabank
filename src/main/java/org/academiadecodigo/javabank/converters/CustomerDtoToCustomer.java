@@ -1,10 +1,10 @@
 package org.academiadecodigo.javabank.converters;
 
 import org.academiadecodigo.javabank.command.CustomerDto;
+import org.academiadecodigo.javabank.exceptions.CustomerNotFoundException;
 import org.academiadecodigo.javabank.persistence.model.Customer;
 import org.academiadecodigo.javabank.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 /**
@@ -32,7 +32,7 @@ public class CustomerDtoToCustomer implements Converter<CustomerDto, Customer> {
      * @return the customer
      */
     @Override
-    public Customer convert(CustomerDto customerDto) {
+    public Customer convert(CustomerDto customerDto) throws CustomerNotFoundException {
 
         Customer customer = (customerDto.getId() != null ? customerService.get(customerDto.getId()) : new Customer());
 
